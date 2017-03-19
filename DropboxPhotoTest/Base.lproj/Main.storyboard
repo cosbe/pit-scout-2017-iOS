@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mjW-bw-bM2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mjW-bw-bM2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -86,7 +86,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rkc-uB-DlR" id="as6-8G-A65">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -154,10 +154,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView multipleTouchEnabled="YES" contentMode="scaleAspectFit" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="qah-pQ-L5G">
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleAspectFit" layoutMarginsFollowReadableWidth="YES" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="qah-pQ-L5G">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXX-Dj-dyy">
+                                        <rect key="frame" x="8" y="8" width="359" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="ELG-4V-5Vl"/>
+                                        </constraints>
+                                        <connections>
+                                            <segue destination="hw1-EW-T22" kind="embed" id="Kky-5D-6tn"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstItem="iXX-Dj-dyy" firstAttribute="leading" secondItem="qah-pQ-L5G" secondAttribute="leading" constant="8" id="7uK-ug-cXI"/>
                                     <constraint firstAttribute="height" constant="648" id="Ckx-uJ-sME"/>
+                                    <constraint firstItem="iXX-Dj-dyy" firstAttribute="top" secondItem="qah-pQ-L5G" secondAttribute="top" constant="8" id="bSQ-wg-bAb"/>
+                                    <constraint firstItem="iXX-Dj-dyy" firstAttribute="centerX" secondItem="qah-pQ-L5G" secondAttribute="centerX" id="igR-zk-1QL"/>
+                                    <constraint firstAttribute="trailing" secondItem="iXX-Dj-dyy" secondAttribute="trailing" constant="8" id="k0N-IU-eBd"/>
+                                    <constraint firstAttribute="bottom" secondItem="iXX-Dj-dyy" secondAttribute="bottom" constant="594" id="oJP-m3-0Pp"/>
                                     <constraint firstAttribute="width" constant="400" id="ocn-0a-Lez"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="400" id="rTp-YF-P75"/>
                                 </constraints>
@@ -228,7 +244,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2da-iZ-Fh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054.5" y="-59.25"/>
+            <point key="canvasLocation" x="1053.5999999999999" y="-59.820089955022496"/>
+        </scene>
+        <!--Text Input View Controller-->
+        <scene sceneID="vmB-X2-Zwd">
+            <objects>
+                <viewController id="hw1-EW-T22" customClass="PSUITextInputViewController" customModule="DropboxPhotoTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UeB-YW-UFI">
+                        <rect key="frame" x="0.0" y="0.0" width="359" height="65"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mnv-aa-Mp8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>

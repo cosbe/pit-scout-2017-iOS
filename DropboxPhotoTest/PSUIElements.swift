@@ -38,7 +38,6 @@ class PSUIFirebaseViewController : UIViewController {
         self.firebaseRef = firebaseRef
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.view.translatesAutoresizingMaskIntoConstraints = true
@@ -107,6 +106,7 @@ class PSUIFirebaseViewController : UIViewController {
 class PSUITextInputViewController : PSUIFirebaseViewController, UITextFieldDelegate {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField : UITextField!
+    
     override func viewDidLoad() {
         let currentResponse = self.UIResponse
         if !hasOverriddenUIResponse {
@@ -115,10 +115,6 @@ class PSUITextInputViewController : PSUIFirebaseViewController, UITextFieldDeleg
                 self.textField.text = value as? String ?? (value as? NSNumber)?.stringValue ?? ""
             }
         }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         self.textField.delegate = self
         self.label.text = super.titleText
         if String(describing: super.initialValue) != "" && String(describing: super.initialValue) != "nil" {
@@ -142,16 +138,16 @@ class PSUISwitchViewController : PSUIFirebaseViewController {
         super.set(sender.isOn as AnyObject)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.neededType = .bool
         self.toggleSwitch.setOn(super.initialValue as? Bool ?? false, animated: true)
         super.UIResponse = { value in
             self.toggleSwitch.setOn(value as! Bool, animated: true)
         }
         self.label.text = super.titleText
-        
     }
+    
 }
 
 class PSUISegmentedViewController : PSUIFirebaseViewController {
@@ -160,9 +156,8 @@ class PSUISegmentedViewController : PSUIFirebaseViewController {
     var segments : [String] = []
     var selectedIndex : Int?
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        //self.segmentedController.numberOfSegments = segments.count
+    override func viewDidLoad() {
+        super.viewDidLoad()
         segmentedController.removeAllSegments()
         for i in 0..<segments.count {
             self.segmentedController.insertSegment(withTitle: segments[i], at: i, animated: true)
@@ -171,17 +166,12 @@ class PSUISegmentedViewController : PSUIFirebaseViewController {
         if String(describing:initialValue) != "Optional(<null>)" {
             selectedIndex = segments.index(of: String(describing: initialValue!))!
         }
+        
         if selectedIndex != nil {
             segmentedController.selectedSegmentIndex = selectedIndex!
         }
-        
-        /* self.neededType = .int
-         self.segmentedController.selectedSegmentIndex = super.initialValue as? Int ?? 0
-         super.UIResponse = { value in
-         self.segmentedController.selectedSegmentIndex = value as! Int
-         } */
+
         self.label.text = super.titleText
-        
         
     }
     

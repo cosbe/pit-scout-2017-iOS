@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,17 +19,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="380" height="80"/>
+            <rect key="frame" x="0.0" y="0.0" width="338" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5n2-1g-bBJ">
-                    <rect key="frame" x="8" y="13" width="363" height="24"/>
+                    <rect key="frame" x="8" y="13" width="325" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="8NG-bh-Zuu">
-                    <rect key="frame" x="8" y="47" width="363" height="29"/>
+                    <rect key="frame" x="8" y="47" width="325" height="29"/>
                     <segments>
                         <segment title="First"/>
                         <segment title="Second"/>
@@ -45,10 +45,10 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="5n2-1g-bBJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="5" id="4Ch-hU-UWW"/>
-                <constraint firstItem="5n2-1g-bBJ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="62A-Gb-7dY"/>
+                <constraint firstAttribute="trailing" secondItem="8NG-bh-Zuu" secondAttribute="trailing" constant="5" id="Dxj-Z0-GlA"/>
                 <constraint firstItem="5n2-1g-bBJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="FOQ-Jj-wWG"/>
                 <constraint firstAttribute="bottom" secondItem="8NG-bh-Zuu" secondAttribute="bottom" constant="5" id="MRI-2J-Gls"/>
-                <constraint firstItem="5n2-1g-bBJ" firstAttribute="trailing" secondItem="8NG-bh-Zuu" secondAttribute="trailing" id="eCS-Ef-MME"/>
+                <constraint firstAttribute="trailing" secondItem="5n2-1g-bBJ" secondAttribute="trailing" constant="5" id="kQD-zv-YpW"/>
                 <constraint firstItem="5n2-1g-bBJ" firstAttribute="leading" secondItem="8NG-bh-Zuu" secondAttribute="leading" id="ljn-xa-20f"/>
                 <constraint firstItem="8NG-bh-Zuu" firstAttribute="top" secondItem="5n2-1g-bBJ" secondAttribute="bottom" constant="10" id="z1g-fS-nS7"/>
             </constraints>
@@ -56,7 +56,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="518" y="38"/>
+            <point key="canvasLocation" x="535" y="38"/>
         </view>
     </objects>
 </document>

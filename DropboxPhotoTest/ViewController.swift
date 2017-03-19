@@ -159,13 +159,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             // Switch
             let willCheesecake = PSUISwitchViewController()
             willCheesecake.setup("Will Cheesecake", firebaseRef: self.ourTeam.child("pitDidDemonstrateCheesecakePotential"), initialValue: snap.childSnapshot(forPath: "pitDidDemonstrateCheesecakePotential").value)
-    
-            // self.addChildViewController(numberOfWheels)
+            
             self.addChildViewController(self.selectedImageName)
-            self.addChildViewController(programmingLanguage)
-            self.addChildViewController(driveTrain)
-            self.addChildViewController(pitOrganization)
             self.addChildViewController(availableWeight)
+            self.addChildViewController(programmingLanguage)
+            self.addChildViewController(pitOrganization)
+            self.addChildViewController(driveTrain)
             self.addChildViewController(willCheesecake)
             
             // UI Elements
@@ -207,7 +206,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     /** 
      This function makes a new photo browser for viewing photos.
-     */
+    */
     // Formatting a new photo browser for viewing photos
     func makeNewBrowser (done: @escaping(_ browser: MWPhotoBrowser) -> ()) {
         var browser = MWPhotoBrowser()
@@ -227,6 +226,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     /**
      This function allows access to the photo library if button is long pressed.
      */
+    
     // Long press to access photo library, not camera
     func didLongPressImageButton(_ recognizer: UIGestureRecognizer) {
         notActuallyLeavingViewController = true
@@ -424,6 +424,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             }
         } */
         
+        // Defaults canCheesecake to be false and, if there is only one image key, sets that image key to be the selected image key
         self.ourTeam.observeSingleEvent(of: .value, with: { (snap) -> Void in
             if snap.childSnapshot(forPath: "pitDidDemonstrateCheesecakePotential").value as? Bool == nil {
                 self.ourTeam.child("pitDidDemonstrateCheesecakePotential").setValue(false)
